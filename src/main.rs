@@ -1,4 +1,5 @@
 use std::env;
+use std::fs;
 
 fn main() {
     println!("Hello, world!");
@@ -11,4 +12,7 @@ fn main() {
 
     println!("query is {}", query);
     println!("filename is {}", filename);
+
+    let contents = fs::read_to_string(filename).expect("Should have been able to read the file");
+    println!("Content is:-\n {}", contents);
 }
